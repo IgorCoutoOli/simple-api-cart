@@ -1,0 +1,83 @@
+{
+    "1": {
+        "name": "Fone de Ouvido Bluetooth",
+        "price": 49.99
+    },
+    "2": {
+        "name": "Relógio Inteligente",
+        "price": 119.90
+    },
+    "3": {
+        "name": "Câmera de Segurança Wi-Fi",
+        "price": 149.99
+    },
+    "4": {
+        "name": "Smartphone Android 64GB",
+        "price": 799.99
+    },
+    "5": {
+        "name": "Mini Projetor Portátil",
+        "price": 299.99
+    },
+    "6": {
+        "name": "Caixa de Som Bluetooth",
+        "price": 79.90
+    },
+    "7": {
+        "name": "Teclado Mecânico Gamer",
+        "price": 199.90
+    },
+    "8": {
+        "name": "Mouse Gamer RGB",
+        "price": 99.90,
+        "qtd_stok": 6
+    },
+    "9": {
+        "name": "Carregador Rápido USB-C",
+        "price": 39.90
+    },
+    "10": {
+        "name": "Suporte de Celular para Carro",
+        "price": 29.90
+    },
+    "11": {
+        "name": "Lâmpada Inteligente Wi-Fi",
+        "price": 59.90
+    },
+    "12": {
+        "name": "Balança Digital de Cozinha",
+        "price": 49.90
+    },
+    "13": {
+        "name": "Espremedor de Frutas Elétrico",
+        "price": 89.90
+    },
+    "14": {
+        "name": "Air Fryer 3,2L",
+        "price": 349.99
+    },
+    "15": {
+        "name": "Liquidificador Portátil USB",
+        "price": 89.99
+    },
+    "16": {
+        "name": "Câmera de Ação 4K",
+        "price": 299.99
+    },
+    "17": {
+        "name": "Adaptador HDMI para VGA",
+        "price": 24.90
+    },
+    "18": {
+        "name": "Power Bank 10000mAh",
+        "price": 149.90
+    },
+    "19": {
+        "name": "Controle Remoto Universal",
+        "price": 69.90
+    },
+    "20": {
+        "name": "Jogo de Chaves de Precisão",
+        "price": 39.99
+    }
+}
