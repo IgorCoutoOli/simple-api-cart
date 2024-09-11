@@ -7,23 +7,23 @@ async function whitelist_add(req, res) {
         const product = await find_product(id);
 
         if(product === undefined) {
-            return res.status(401).send("Não foi possivel encontrar o produto.");
+            return res.status(404).send("Não foi possivel encontrar o produto.");
         }
 
         const whitelist = await find_whitelist();
 
         if(whitelist.products.includes(id)) {
-            return res.status(401).send("O produto já esta na sua whitelist.");
+            return res.status(409).send("O produto já esta na sua whitelist.");
         }
 
         whitelist.products.push(id);
         
         await update_whitelist(whitelist);
 
-        return res.status(200).send(`O produto "${product.name}" foi adicionado a sua whitelist.`);
+        return res.status(201).send(`O produto "${product.name}" foi adicionado a sua whitelist.`);
     } catch(err) {
         console.log(err);
-        return res.status(400).send(err);
+        return res.status(500).send(err);
     }
 }
 
@@ -34,13 +34,13 @@ async function whitelist_del(req, res) {
         const whitelist = await find_whitelist();
 
         if (!Array.isArray(whitelist.products)) {
-            return res.status(401).send("Whitelist esta vazia.");
+            return res.status(404).send("Whitelist esta vazia.");
         }
 
         const index = whitelist.products.findIndex(productId => productId === id);
 
         if(index === -1) {
-            return res.status(401).send("Produto não esta na sua whitelist.");
+            return res.status(404).send("Produto não esta na sua whitelist.");
         }
 
         whitelist.products.splice(index, 1);
@@ -50,7 +50,7 @@ async function whitelist_del(req, res) {
         return res.status(200).send(`Produto removido da whitelist.`);
     } catch(err) {
         console.log(err);
-        return res.status(400).send(err);
+        return res.status(500).send(err);
     }
 }
 

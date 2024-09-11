@@ -5,14 +5,14 @@ import { whitelist_add, whitelist_del, whitelist_show } from "./service/whitelis
 const router = Router()
 
 // Cart
-router.get('/cart-add/:id/:qtd', cart_add)
-router.get('/cart-del/:id/:qtd', cart_del)
+router.post('/cart-add/:id/:qtd', cart_add)
+router.patch('/cart-update/:id/:qtd', cart_del)
 router.get('/cart-show', cart_show)
-router.get('/cart-clean', cart_clean)
+router.delete('/cart-clean', cart_clean)
 
 // Whitelist
-router.get('/whitelist-add/:id', whitelist_add)
-router.get('/whitelist-del/:id', whitelist_del)
+router.post('/whitelist-add/:id', whitelist_add)
+router.delete('/whitelist-del/:id', whitelist_del)
 router.get('/whitelist-show', whitelist_show)
 
 export default router

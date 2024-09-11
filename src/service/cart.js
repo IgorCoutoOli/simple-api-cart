@@ -8,7 +8,7 @@ async function cart_add(req, res) {
         const product = await find_product(id);
 
         if(product === undefined) {
-            return res.status(401).send("Não foi possivel encontrar o produto.");
+            return res.status(404).send("Não foi possivel encontrar o produto.");
         }
 
         const cart = await find_cart()
@@ -18,10 +18,10 @@ async function cart_add(req, res) {
     
         await update_cart(cart)
 
-        return res.status(200).send(`${qtd}x do produto "${product.name}" adicionado ao carrinho.`);
+        return res.status(201).send(`${qtd}x do produto "${product.name}" adicionado ao carrinho.`);
     } catch(err) {
         console.log(err);
-        return res.status(400).send(err);
+        return res.status(500).send(err);
     }
 }
 
@@ -34,11 +34,11 @@ async function cart_del(req, res) {
         const product = await find_product(id);
 
         if(product === undefined) {
-            return res.status(401).send("Não foi possivel encontrar o produto.");
+            return res.status(404).send("Não foi possivel encontrar o produto.");
         }
 
         if (!Array.isArray(cart.products)) {
-            return res.status(401).send("Carrinho esta vazio.");
+            return res.status(204).send("Carrinho esta vazio.");
         }
 
         const index = cart.products.findIndex(product => product.id === id);
@@ -57,7 +57,7 @@ async function cart_del(req, res) {
         return res.status(200).send(qtd > 0? `Quantidade do produto ${product.name} alterado para ${qtd}`:`Produto ${product.name} removido.`);
     } catch(err) {
         console.log(err);
-        return res.status(400).send(err);
+        return res.status(500).send(err);
     }
 }
 
