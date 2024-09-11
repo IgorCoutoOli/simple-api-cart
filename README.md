@@ -33,13 +33,13 @@ Este projeto é uma API simples construída com Node.js e Express que permite ad
 
 - Adicionar Produto ao Carrinho
     ```http
-    GET /cart-add/:id/:qtd
+    POST /cart-add/:id/:qtd
     ```
     Adiciona a quantidade especificada de um produto ao carrinho.
 
 - Remover/Alterar Produto no Carrinho
     ```http
-    GET /cart-del/:id/:qtd
+    PATCH /cart-update/:id/:qtd
     ```
     Remove ou altera a quantidade de um produto no carrinho. Se qtd for 0, o produto será removido.
 
@@ -51,7 +51,7 @@ Este projeto é uma API simples construída com Node.js e Express que permite ad
 
 - Limpar Carrinho
     ```http
-    GET /cart-clean
+    DELETE /cart-clean
     ```
     Remove todos os produtos do carrinho.
 
@@ -59,13 +59,13 @@ Este projeto é uma API simples construída com Node.js e Express que permite ad
 
 - Adicionar Produto à Whitelist
     ```http
-    GET /whitelist-add/:id
+    POST /whitelist-add/:id
     ```
     Adiciona um produto à whitelist.
 
 - Remover Produto da Whitelist
     ```http
-    GET /whitelist-del/:id
+    DELETE /whitelist-del/:id
     ```
     Remove um produto da whitelist.
 
